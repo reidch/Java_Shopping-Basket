@@ -22,7 +22,7 @@ public class TestCustomer {
     }
 
     @Test
-    public void checkHasName() {
+    public void hasName() {
         assertEquals("Joseph Cook", customer.getName());
     }
 

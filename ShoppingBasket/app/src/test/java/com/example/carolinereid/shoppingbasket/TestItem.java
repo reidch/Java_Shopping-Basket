@@ -18,11 +18,11 @@ public class TestItem {
 
     @Before
     public void before() {
-        item = new Item("Crema e gusto espresso", "Lavazza", 4.26);
-        item1 = new Item("semi-skimmed milk, 1 litre", "Grahams", 0.79);
-        item2 = new Item("demerara sugar", "Tate and Lyle", 1.25);
-        item3 = new Item("Choco Leibniz biscuits", "Bahlsen", 1.58);
-        item4 = new Item("dark chocolate gingers", "Border biscuits", 1.00);
+        item = new Item("Crema e gusto espresso", "Lavazza", "350g", 4.26);
+        item1 = new Item("semi-skimmed milk", "Grahams", "1 litre", 0.79);
+        item2 = new Item("demerara sugar", "Tate and Lyle", "500g", 1.25);
+        item3 = new Item("Choco Leibniz biscuits", "Bahlsen", "250g", 1.58);
+        item4 = new Item("dark chocolate gingers", "Border biscuits", "250g", 1.00);
     }
 
     @Test
@@ -36,12 +36,17 @@ public class TestItem {
     }
 
     @Test
-    public void hasPrice() {
-        assertEquals(0.79, item1.getPrice(), 0.1);
+    public void hasQuantity() {
+        assertEquals("1 litre", item1.getQuantity());
     }
 
     @Test
-    public void canChangePrice() {
+    public void hasPrice() {
+        assertEquals(1.25, item2.getPrice(), 0.1);
+    }
+
+    @Test
+    public void checkCanChangePrice() {
         item.setPrice(4.58);
         assertEquals(4.58, item.getPrice(), 0.1);
     }

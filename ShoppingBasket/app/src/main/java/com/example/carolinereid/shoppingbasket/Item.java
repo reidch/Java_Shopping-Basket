@@ -6,27 +6,33 @@ package com.example.carolinereid.shoppingbasket;
 
 public class Item {
     private String description;
+    private String quantity;
     private String brand;
     private double price;
 //    bogofStatus
 
 
-    public Item(String description, String brand, double price) {
+    public Item(String description, String brand, String quantity, double price) {
         this.description = description;
         this.brand = brand;
+        this.quantity = quantity;
         this.price = price;
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public String getBrand() {
-        return brand;
+        return this.brand;
+    }
+
+    public String getQuantity() {
+        return this.quantity;
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(double price) {
