@@ -52,13 +52,6 @@ public class Basket {
 //    }
 
 //    applying 10% discount to total for purchase over £20
-//    public double getDiscountedTotal(double totalValue) {
-//        if (totalValue > 20) {
-//            discountedTotal = totalValue - ((totalValue / 100) * 10);
-//        }
-//        return discountedTotal;
-//    }
-
     public double getDiscountedTotal(double totalValue) {
         if (totalValue > 20) {
             discountedTotal = totalValue - ((totalValue / 100) * 10);
