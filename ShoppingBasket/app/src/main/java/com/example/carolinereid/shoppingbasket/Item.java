@@ -4,7 +4,7 @@ package com.example.carolinereid.shoppingbasket;
  * Created by carolinereid on 25/11/2017.
  */
 
-public class Item {
+public class Item implements Buyable {
     private String description;
     private String quantity;
     private String brand;
