@@ -103,4 +103,17 @@ public class TestBasket {
         basket.addItem(item5);
         assertEquals(19.8, basket.getDiscountedTotal(22), 0.1);
     }
+
+//    tests that when the purchase is UNDER £20, the 10% discount is NOT applied
+    @Test
+    public void testOnlyAppliesHighSpendDiscountWhenOver20() {
+        basket.addItem(item);
+        assertEquals(4, basket.getDiscountedTotal(4), 0.1);
+    }
+
+//    @Test
+//    public void testLoyaltyDiscountApplied() {
+//        basket.addItem(item5);
+//        assertEquals(9.8, basket.getLoyaltyDiscountedTotal(10), 0.1);
+//    }
 }

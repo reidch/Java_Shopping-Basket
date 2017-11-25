@@ -10,7 +10,8 @@ public class Basket {
     private ArrayList<Buyable> contents;
     protected double totalValue;
     public double discountedTotal;
-    //    Customer customer;
+    public double loyaltyDiscountedTotal;
+    public Customer customer;
 
     public Basket() {
         this.contents = new ArrayList<>();
@@ -51,16 +52,26 @@ public class Basket {
 //    }
 
 //    applying 10% discount to total for purchase over £20
+//    public double getDiscountedTotal(double totalValue) {
+//        if (totalValue > 20) {
+//            discountedTotal = totalValue - ((totalValue / 100) * 10);
+//        }
+//        return discountedTotal;
+//    }
+
     public double getDiscountedTotal(double totalValue) {
         if (totalValue > 20) {
-            discountedTotal = totalValue - ((totalValue/100)*10);
+            discountedTotal = totalValue - ((totalValue / 100) * 10);
+            return discountedTotal;
+        } else {
+            return totalValue;
         }
-        return discountedTotal;
     }
 
-//    public void applyLoyaltyDiscount() {
-//        if(customer.hasLoyaltyCard()) {
-//            getTotalValue()
+//    public double getLoyaltyDiscountedTotal(double totalValue) {
+//        if (customer.hasLoyaltyCard()) {
+//            loyaltyDiscountedTotal = totalValue - ((totalValue/100)*2);
 //        }
+//        return loyaltyDiscountedTotal;
 //    }
 }
