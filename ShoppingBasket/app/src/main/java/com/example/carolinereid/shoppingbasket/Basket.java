@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Basket {
     private ArrayList<Buyable> contents;
     protected double totalValue;
+    public double discountedTotal;
     //    Customer customer;
 
     public Basket() {
@@ -39,11 +40,11 @@ public class Basket {
         return totalValue;
     }
 
-    public double applyHighSpendDiscount() {
+    public double getDiscountedTotal(double totalValue) {
         if (totalValue > 20) {
-            totalValue *= 0.8;
+            discountedTotal = totalValue - ((totalValue/100)*20);
         }
-        return totalValue;
+        return discountedTotal;
     }
 
 //    public void applyBuyOneGetOneFree() {
