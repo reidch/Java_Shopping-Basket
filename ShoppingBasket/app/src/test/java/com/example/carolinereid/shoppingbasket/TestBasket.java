@@ -66,6 +66,7 @@ public class TestBasket {
         assertEquals(4, basket.getTotalValue(), 0.1);
     }
 
+//    testing that totalValue is updated when another item is added
     @Test
     public void testGetUpdatedTotalValue() {
         basket.addItem(item);
@@ -74,6 +75,7 @@ public class TestBasket {
         assertEquals(6, basket.getTotalValue(), 0.1);
     }
 
+//    testing that totalValue is revised when an item is removed from basket
     @Test
     public void testGetRevisedTotalValue() {
         basket.addItem(item);
@@ -83,17 +85,7 @@ public class TestBasket {
         assertEquals(5, basket.getTotalValue(), 0.1);
     }
 
-    @Test
-    public void testApplyHighSpendDiscount() {
-        basket.addItem(item);
-        basket.addItem(item);
-        basket.addItem(item2);
-        basket.addItem(item3);
-        basket.addItem(item5);
-        assertEquals(17.6, basket.getDiscountedTotal(22), 0.1);
-    }
-
-//    @Test
+    //    @Test
 //    public void testBuyOneGetOneFree() {
 //        basket.addItem(item);
 //        basket.addItem(item);
@@ -101,4 +93,14 @@ public class TestBasket {
 //        assertEquals(6, basket.getTotalValue(), 0.1);
 //    }
 
+//    tests that 10% discount is correctly applied to purchases over £20
+    @Test
+    public void testApplyHighSpendDiscount() {
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.addItem(item2);
+        basket.addItem(item3);
+        basket.addItem(item5);
+        assertEquals(19.8, basket.getDiscountedTotal(22), 0.1);
+    }
 }

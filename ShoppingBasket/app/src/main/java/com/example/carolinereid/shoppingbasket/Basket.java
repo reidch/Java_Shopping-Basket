@@ -32,6 +32,7 @@ public class Basket {
         this.contents.clear();
     }
 
+//    totalling the value of all items in basket
     public double getTotalValue() {
         double totalValue = 0;
         for (Buyable item : contents) {
@@ -40,14 +41,7 @@ public class Basket {
         return totalValue;
     }
 
-    public double getDiscountedTotal(double totalValue) {
-        if (totalValue > 20) {
-            discountedTotal = totalValue - ((totalValue/100)*20);
-        }
-        return discountedTotal;
-    }
-
-//    public void applyBuyOneGetOneFree() {
+    //    public void applyBuyOneGetOneFree() {
 //        for (Buyable item : contents) {
 //            boolean retval = contents.contains(item);
 //            if (retval == true) {
@@ -55,6 +49,14 @@ public class Basket {
 //            }
 //        }
 //    }
+
+//    applying 10% discount to total for purchase over £20
+    public double getDiscountedTotal(double totalValue) {
+        if (totalValue > 20) {
+            discountedTotal = totalValue - ((totalValue/100)*10);
+        }
+        return discountedTotal;
+    }
 
 //    public void applyLoyaltyDiscount() {
 //        if(customer.hasLoyaltyCard()) {
