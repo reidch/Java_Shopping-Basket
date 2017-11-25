@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 public class Basket {
     private ArrayList<Buyable> contents;
+    protected double totalValue;
+    //    Customer customer;
 
     public Basket() {
-        this.contents = new ArrayList<Buyable>();
+        this.contents = new ArrayList<>();
     }
 
     public int countContents() {
@@ -29,11 +31,32 @@ public class Basket {
         this.contents.clear();
     }
 
-    public int getTotalValue() {
-        int totalValue = 0;
-        for(Buyable item: contents){
+    public double getTotalValue() {
+        double totalValue = 0;
+        for (Buyable item : contents) {
             totalValue += item.getPrice();
         }
         return totalValue;
     }
+
+    public void applyHighSpendDiscount(double highSpendDiscount) {
+        if (totalValue > 20) {
+            totalValue *= highSpendDiscount;
+        }
+    }
+
+//    public void applyBuyOneGetOneFree() {
+//        for (Buyable item : contents) {
+//            boolean retval = contents.contains(item);
+//            if (retval == true) {
+//                totalValue = totalValue - item.getPrice();
+//            }
+//        }
+//    }
+
+//    public void applyLoyaltyDiscount() {
+//        if(customer.hasLoyaltyCard()) {
+//            getTotalValue()
+//        }
+//    }
 }

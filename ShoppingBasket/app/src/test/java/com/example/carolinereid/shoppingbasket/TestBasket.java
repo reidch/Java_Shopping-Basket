@@ -16,6 +16,7 @@ public class TestBasket {
     Item item2;
     Item item3;
     Item item4;
+    Item item5;
 
     @Before
     public void before() {
@@ -25,6 +26,7 @@ public class TestBasket {
         item2 = new Item("demerara sugar", "Tate and Lyle", "500g", 2);
         item3 = new Item("Choco Leibniz biscuits", "Bahlsen", "250g", 2);
         item4 = new Item("dark chocolate gingers", "Border biscuits", "250g", 1);
+        item5 = new Item("dishwasher tablets", "Finish", "72 pack", 10);
     }
 
     @Test
@@ -68,8 +70,8 @@ public class TestBasket {
     public void testGetUpdatedTotalValue() {
         basket.addItem(item);
         basket.addItem(item1);
-        basket.addItem(item2);
-        assertEquals(7, basket.getTotalValue(), 0.1);
+        basket.addItem(item4);
+        assertEquals(6, basket.getTotalValue(), 0.1);
     }
 
     @Test
@@ -80,4 +82,24 @@ public class TestBasket {
         basket.removeItem(item2);
         assertEquals(5, basket.getTotalValue(), 0.1);
     }
+
+    @Test
+    public void testApplyHighSpendDiscount() {
+        basket.addItem(item);
+        basket.addItem(item);
+        basket.addItem(item2);
+        basket.addItem(item3);
+        basket.addItem(item5);
+        basket.applyHighSpendDiscount(0.8);
+        assertEquals(17.6, basket.getTotalValue(), 0.1);
+    }
+
+//    @Test
+//    public void testBuyOneGetOneFree() {
+//        basket.addItem(item);
+//        basket.addItem(item);
+//        basket.addItem(item2);
+//        assertEquals(6, basket.getTotalValue(), 0.1);
+//    }
+
 }

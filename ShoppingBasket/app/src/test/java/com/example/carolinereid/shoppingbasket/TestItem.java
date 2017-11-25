@@ -15,6 +15,7 @@ public class TestItem {
     Item item2;
     Item item3;
     Item item4;
+    Item item5;
 
     @Before
     public void before() {
@@ -23,6 +24,7 @@ public class TestItem {
         item2 = new Item("demerara sugar", "Tate and Lyle", "500g", 2);
         item3 = new Item("Choco Leibniz biscuits", "Bahlsen", "250g", 2);
         item4 = new Item("dark chocolate gingers", "Border biscuits", "250g", 1);
+        item5 = new Item("dishwasher tablets", "Finish", "72 pack", 10);
     }
 
     @Test
