@@ -8,7 +8,7 @@ public class Item implements Buyable {
     private String description;
     private String quantity;
     private String brand;
-    private double price;
+    protected double price;
 //    bogofStatus
 
 

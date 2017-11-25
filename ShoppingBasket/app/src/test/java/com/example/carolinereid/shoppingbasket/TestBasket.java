@@ -20,11 +20,11 @@ public class TestBasket {
     @Before
     public void before() {
         basket = new Basket();
-        item = new Item("Crema e gusto espresso", "Lavazza", "350g", 4.26);
-        item1 = new Item("semi-skimmed milk", "Grahams", "1 litre", 0.79);
-        item2 = new Item("demerara sugar", "Tate and Lyle", "500g", 1.25);
-        item3 = new Item("Choco Leibniz biscuits", "Bahlsen", "250g", 1.58);
-        item4 = new Item("dark chocolate gingers", "Border biscuits", "250g", 1.00);
+        item = new Item("Crema e gusto espresso", "Lavazza", "350g", 4);
+        item1 = new Item("semi-skimmed milk", "Grahams", "1 litre", 1);
+        item2 = new Item("demerara sugar", "Tate and Lyle", "500g", 2);
+        item3 = new Item("Choco Leibniz biscuits", "Bahlsen", "250g", 2);
+        item4 = new Item("dark chocolate gingers", "Border biscuits", "250g", 1);
     }
 
     @Test
@@ -56,5 +56,28 @@ public class TestBasket {
         basket.addItem(item2);
         basket.emptyBasket();
         assertEquals(0, basket.countContents());
+    }
+
+    @Test
+    public void testGetTotalValue() {
+        basket.addItem(item);
+        assertEquals(4, basket.getTotalValue(), 0.1);
+    }
+
+    @Test
+    public void testGetUpdatedTotalValue() {
+        basket.addItem(item);
+        basket.addItem(item1);
+        basket.addItem(item2);
+        assertEquals(7, basket.getTotalValue(), 0.1);
+    }
+
+    @Test
+    public void testGetRevisedTotalValue() {
+        basket.addItem(item);
+        basket.addItem(item1);
+        basket.addItem(item2);
+        basket.removeItem(item2);
+        assertEquals(5, basket.getTotalValue(), 0.1);
     }
 }

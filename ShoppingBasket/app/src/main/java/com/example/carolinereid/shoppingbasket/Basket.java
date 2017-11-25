@@ -28,4 +28,12 @@ public class Basket {
     public void emptyBasket() {
         this.contents.clear();
     }
+
+    public int getTotalValue() {
+        int totalValue = 0;
+        for(Buyable item: contents){
+            totalValue += item.getPrice();
+        }
+        return totalValue;
+    }
 }

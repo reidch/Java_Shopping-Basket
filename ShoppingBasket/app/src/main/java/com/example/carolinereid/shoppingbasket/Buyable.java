@@ -6,4 +6,5 @@ package com.example.carolinereid.shoppingbasket;
 
 public interface Buyable {
 
+    double getPrice();
 }
