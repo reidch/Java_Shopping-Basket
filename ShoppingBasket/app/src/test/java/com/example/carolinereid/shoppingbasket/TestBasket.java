@@ -17,6 +17,7 @@ public class TestBasket {
     Item item3;
     Item item4;
     Item item5;
+    Customer customer;
 
     @Before
     public void before() {
@@ -27,6 +28,7 @@ public class TestBasket {
         item3 = new Item("Choco Leibniz biscuits", "Bahlsen", "250g", 2);
         item4 = new Item("dark chocolate gingers", "Border biscuits", "250g", 1);
         item5 = new Item("dishwasher tablets", "Finish", "72 pack", 10);
+        customer = new Customer("Joseph Cook", true);
     }
 
     @Test
@@ -85,6 +87,8 @@ public class TestBasket {
         assertEquals(5, basket.getTotalValue(), 0.1);
     }
 
+//    would all 3 discounts need to be checked for in one big function, in the appropriate order?
+    
     //    @Test
 //    public void testBuyOneGetOneFree() {
 //        basket.addItem(item);
@@ -114,6 +118,7 @@ public class TestBasket {
 //    @Test
 //    public void testLoyaltyDiscountApplied() {
 //        basket.addItem(item5);
+//        assertEquals(true, customer.hasLoyaltyCard());
 //        assertEquals(9.8, basket.getLoyaltyDiscountedTotal(10), 0.1);
 //    }
 }

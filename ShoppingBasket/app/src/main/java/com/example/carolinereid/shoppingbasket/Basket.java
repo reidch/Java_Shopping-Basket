@@ -9,9 +9,7 @@ import java.util.ArrayList;
 public class Basket {
     private ArrayList<Buyable> contents;
     protected double totalValue;
-    public double discountedTotal;
-    public double loyaltyDiscountedTotal;
-    public Customer customer;
+    Customer customer;
 
     public Basket() {
         this.contents = new ArrayList<>();
@@ -54,8 +52,7 @@ public class Basket {
 //    applying 10% discount to total for purchase over £20
     public double getDiscountedTotal(double totalValue) {
         if (totalValue > 20) {
-            discountedTotal = totalValue - ((totalValue / 100) * 10);
-            return discountedTotal;
+            return totalValue - ((totalValue/100) * 10);
         } else {
             return totalValue;
         }
@@ -63,8 +60,18 @@ public class Basket {
 
 //    public double getLoyaltyDiscountedTotal(double totalValue) {
 //        if (customer.hasLoyaltyCard()) {
-//            loyaltyDiscountedTotal = totalValue - ((totalValue/100)*2);
-//        }
+//            loyaltyDiscountedTotal = totalValue - ((totalValue/100) * 2);
 //        return loyaltyDiscountedTotal;
+//        } else {
+//            return totalValue;
+//        }
+//    }
+
+//    public double getLoyaltyDiscountedTotal(double totalValue) {
+//        if (customer.hasLoyaltyCard()) {
+//            return totalValue - ((totalValue/100) * 2);
+//        } else {
+//            return totalValue;
+//        }
 //    }
 }

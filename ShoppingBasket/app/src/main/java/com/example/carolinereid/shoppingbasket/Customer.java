@@ -6,7 +6,7 @@ package com.example.carolinereid.shoppingbasket;
 
 public class Customer {
     private String name;
-    protected boolean loyaltyCard;
+    public boolean loyaltyCard;
 
     public Customer(String name, boolean loyaltyCard) {
         this.name = name;
