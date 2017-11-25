@@ -90,7 +90,7 @@ public class TestBasket {
         basket.addItem(item2);
         basket.addItem(item3);
         basket.addItem(item5);
-        basket.applyHighSpendDiscount(0.8);
+        basket.applyHighSpendDiscount();
         assertEquals(17.6, basket.getTotalValue(), 0.1);
     }
 

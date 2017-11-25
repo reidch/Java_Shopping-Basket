@@ -39,10 +39,11 @@ public class Basket {
         return totalValue;
     }
 
-    public void applyHighSpendDiscount(double highSpendDiscount) {
+    public double applyHighSpendDiscount() {
         if (totalValue > 20) {
-            totalValue *= highSpendDiscount;
+            totalValue *= 0.8;
         }
+        return totalValue;
     }
 
 //    public void applyBuyOneGetOneFree() {
