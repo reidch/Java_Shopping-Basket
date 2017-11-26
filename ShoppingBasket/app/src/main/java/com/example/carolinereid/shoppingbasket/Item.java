@@ -7,8 +7,8 @@ package com.example.carolinereid.shoppingbasket;
 public class Item implements Buyable {
     private String description;
     private String brand;
-    public int barcode;
-    protected double price;
+    private int barcode;
+    private double price;
 
 
     public Item(String description, String brand, int barcode, double price) {

@@ -19,7 +19,6 @@ public class TestBasket {
     Item item4;
     Item item5;
     Customer customer;
-    Customer customer1;
 
     @Before
     public void before() {
@@ -31,7 +30,6 @@ public class TestBasket {
         item4 = new Item("dark chocolate gingers", "Border biscuits", 567890, 1.00);
         item5 = new Item("dishwasher tablets", "Finish", 678901, 10.00);
         customer = new Customer("Joseph Cook", true);
-        customer1 = new Customer("Ann Chambers", false);
     }
 
     @Test
@@ -91,7 +89,6 @@ public class TestBasket {
     }
 
 //    would all 3 discounts need to be checked for in one big function, in the appropriate order?
-
 //        @Test
 //    public void testBuyOneGetOneFree() {
 //        basket.addItem(item);
@@ -119,22 +116,24 @@ public class TestBasket {
         assertEquals(4.00, basket.getDiscountedTotal(4.00), 0.1);
     }
 
-//    tests that a discount of 2% is applied for customers with loyalty cards
+//    tests that the 10% discount is applied first (for purchases over £29), then the 2% discount for customers with loyalty cards
     @Test
-    public void testLoyaltyDiscountApplied() {
-        basket.addItem(item5);
-        assertTrue(customer.hasLoyaltyCard());
-        assertEquals(9.80, basket.getLoyaltyDiscountTotal(10.00), 0.1);
-    }
-
-    @Test
-    public void testCumulativeLoyaltyDiscountApplied() {
+    public void testHighSpendAndLoyaltyDiscountApplied() {
         basket.addItem(item);
         basket.addItem(item);
         basket.addItem(item2);
         basket.addItem(item3);
         basket.addItem(item5);
         assertTrue(customer.hasLoyaltyCard());
-        assertEquals(19.40, basket.getLoyaltyDiscountTotal(22.00), 0.1);
+        assertEquals(19.40, basket.getCumulativeLoyaltyDiscountTotal(22.00), 0.1);
+    }
+
+//    tests that the 2% discount is applied (i.e. for purchases under £20)
+    @Test
+    public void testOnlyLoyaltyDiscountApplied() {
+        basket.addItem(item);
+        basket.addItem(item);
+        assertTrue(customer.hasLoyaltyCard());
+        assertEquals(7.84, basket.getCumulativeLoyaltyDiscountTotal(8.00), 0.1);
     }
 }
