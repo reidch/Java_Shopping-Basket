@@ -7,7 +7,7 @@ package com.example.carolinereid.shoppingbasket;
 public class Item implements Buyable {
     private String description;
     private String brand;
-    private int barcode;
+    public int barcode;
     protected double price;
 
 

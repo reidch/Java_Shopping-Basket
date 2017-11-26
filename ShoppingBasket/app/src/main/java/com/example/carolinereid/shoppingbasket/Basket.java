@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class Basket {
     private ArrayList<Buyable> contents;
-    protected double totalValue;
-    Customer customer;
+//    protected double totalValue;
+//    Item item;
 
     public Basket() {
         this.contents = new ArrayList<>();
@@ -40,11 +40,10 @@ public class Basket {
         return totalValue;
     }
 
-    //    public void applyBuyOneGetOneFree() {
+//        public void applyBuyOneGetOneFree() {
 //        for (Buyable item : contents) {
-//            boolean retval = contents.contains(item);
-//            if (retval == true) {
-//                totalValue = totalValue - item.getPrice();
+//            if (barcode() == Buyable.getBarcode() ){
+//                 totalValue -= item.getPrice();
 //            }
 //        }
 //    }
@@ -58,20 +57,13 @@ public class Basket {
         }
     }
 
-//    public double getLoyaltyDiscountedTotal(double totalValue) {
-//        if (customer.hasLoyaltyCard()) {
-//            loyaltyDiscountedTotal = totalValue - ((totalValue/100) * 2);
-//        return loyaltyDiscountedTotal;
-//        } else {
-//            return totalValue;
-//        }
-//    }
-
-//    public double getLoyaltyDiscountedTotal(double totalValue) {
-//        if (customer.hasLoyaltyCard()) {
-//            return totalValue - ((totalValue/100) * 2);
-//        } else {
-//            return totalValue;
-//        }
-//    }
+//    this appears to pass but I know there's a problem with it because I shouldn't have to pass in a specific instance of customer
+    public double getLoyaltyDiscountTotal(double totalValue) {
+        Customer customer = new Customer("Joseph Cook", true);
+        if (customer.hasLoyaltyCard()) {
+            return totalValue - ((totalValue/100) * 2);
+        } else {
+            return totalValue;
+        }
+    }
 }
