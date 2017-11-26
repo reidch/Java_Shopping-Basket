@@ -19,12 +19,12 @@ public class TestItem {
 
     @Before
     public void before() {
-        item = new Item("Crema e gusto espresso", "Lavazza", "350g", 4);
-        item1 = new Item("semi-skimmed milk", "Grahams", "1 litre", 1);
-        item2 = new Item("demerara sugar", "Tate and Lyle", "500g", 2);
-        item3 = new Item("Choco Leibniz biscuits", "Bahlsen", "250g", 2);
-        item4 = new Item("dark chocolate gingers", "Border biscuits", "250g", 1);
-        item5 = new Item("dishwasher tablets", "Finish", "72 pack", 10);
+        item = new Item("Crema e gusto espresso", "Lavazza", 123456, 4);
+        item1 = new Item("semi-skimmed milk", "Grahams", 234567, 1);
+        item2 = new Item("demerara sugar", "Tate and Lyle", 345678, 2);
+        item3 = new Item("Choco Leibniz biscuits", "Bahlsen", 456789, 2);
+        item4 = new Item("dark chocolate gingers", "Border biscuits", 567890, 1);
+        item5 = new Item("dishwasher tablets", "Finish", 678901, 10);
     }
 
     @Test
@@ -38,8 +38,8 @@ public class TestItem {
     }
 
     @Test
-    public void hasQuantity() {
-        assertEquals("1 litre", item1.getQuantity());
+    public void hasBarcode() {
+        assertEquals(234567, item1.getBarcode());
     }
 
     @Test

@@ -6,15 +6,15 @@ package com.example.carolinereid.shoppingbasket;
 
 public class Item implements Buyable {
     private String description;
-    private String quantity;
     private String brand;
+    private int barcode;
     protected double price;
 
 
-    public Item(String description, String brand, String quantity, double price) {
+    public Item(String description, String brand, int barcode, double price) {
         this.description = description;
         this.brand = brand;
-        this.quantity = quantity;
+        this.barcode = barcode;
         this.price = price;
     }
 
@@ -26,8 +26,8 @@ public class Item implements Buyable {
         return this.brand;
     }
 
-    public String getQuantity() {
-        return this.quantity;
+    public int getBarcode() {
+        return this.barcode;
     }
 
     public double getPrice() {
