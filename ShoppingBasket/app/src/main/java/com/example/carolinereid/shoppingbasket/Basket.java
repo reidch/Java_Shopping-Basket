@@ -38,12 +38,15 @@ public class Basket {
         return totalValue;
     }
 
-//        public void applyBuyOneGetOneFree() {
+//  I can't get this to return the correct amount
+//    public double applyBuyOneGetOneFree(int barcode) {
+//        double totalValue = getTotalValue();
 //        for (Buyable item : contents) {
-//            if (barcode() == Buyable.getBarcode() ){
-//                 totalValue -= item.getPrice();
+//            if (barcode == barcode) {
+//                return totalValue - item.getPrice();
 //            }
 //        }
+//        return totalValue;
 //    }
 
 //    applying 10% discount to total for purchase over £20

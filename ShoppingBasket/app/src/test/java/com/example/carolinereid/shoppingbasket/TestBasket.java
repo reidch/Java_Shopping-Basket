@@ -88,13 +88,13 @@ public class TestBasket {
         assertEquals(5.00, basket.getTotalValue(), 0.1);
     }
 
-//    would all 3 discounts need to be checked for in one big function, in the appropriate order?
+//  I can't get this to return the correct amount
 //        @Test
 //    public void testBuyOneGetOneFree() {
 //        basket.addItem(item);
 //        basket.addItem(item);
 //        basket.addItem(item2);
-//        basket.applyBuyOneGetOneFree();
+//        basket.applyBuyOneGetOneFree(123456);
 //        assertEquals(6.00, basket.getTotalValue(), 0.1);
 //    }
 
