@@ -38,7 +38,9 @@ public class Basket {
         return totalValue;
     }
 
-//  I can't get this to return the correct amount
+//    I can't get this to return the correct amount
+//    if I could get it to work, I would incorporate it into the other discount functions, as the first thing to check for.
+
 //    public double applyBuyOneGetOneFree(int barcode) {
 //        double totalValue = getTotalValue();
 //        for (Buyable item : contents) {
@@ -58,8 +60,9 @@ public class Basket {
         }
     }
 
-//    applying the 10% discount first (for purchases over £29), then the 2% discount for customers with loyalty cards
 //    this appears to pass but I know there's a problem with it because I shouldn't have to pass in a specific instance of customer
+
+//    applying the 10% discount first (for purchases over £29), then the 2% discount for customers with loyalty cards
     public double getCumulativeLoyaltyDiscountTotal(double totalValue) {
         Customer customer = new Customer("Joseph Cook", true);
         if (totalValue > 20 && customer.hasLoyaltyCard()) {
