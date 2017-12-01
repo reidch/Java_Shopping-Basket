@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 public class Basket {
     private ArrayList<Buyable> contents;
+    private Customer customer;
 
-    public Basket() {
+    public Basket(Customer customer) {
         this.contents = new ArrayList<>();
+        this.customer = customer;
     }
 
     public int countContents() {
@@ -30,7 +32,7 @@ public class Basket {
     }
 
 //    totalling the value of all items in basket
-    public double getTotalValue() {
+    protected double getTotalValue() {
         double totalValue = 0;
         for (Buyable item : contents) {
             totalValue += item.getPrice();
@@ -52,7 +54,7 @@ public class Basket {
 //    }
 
 //    applying 10% discount to total for purchase over £20
-    public double getDiscountedTotal(double totalValue) {
+    protected double getDiscountedTotal(double totalValue) {
         if (totalValue > 20) {
             return totalValue - ((totalValue/100) * 10);
         } else {
@@ -60,11 +62,8 @@ public class Basket {
         }
     }
 
-//    this appears to pass but I know there's a problem with it because I shouldn't have to pass in a specific instance of customer
-
 //    applying the 10% discount first (for purchases over £29), then the 2% discount for customers with loyalty cards
-    public double getCumulativeLoyaltyDiscountTotal(double totalValue) {
-        Customer customer = new Customer("Joseph Cook", true);
+    protected double getCumulativeLoyaltyDiscountTotal(double totalValue) {
         if (totalValue > 20 && customer.hasLoyaltyCard()) {
             return (totalValue - ((totalValue / 100) * 10)) * 0.98;
         } else if (totalValue <= 20 && customer.hasLoyaltyCard()) {

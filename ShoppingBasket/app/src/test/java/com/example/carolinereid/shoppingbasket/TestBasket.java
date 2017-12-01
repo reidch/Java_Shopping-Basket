@@ -22,14 +22,14 @@ public class TestBasket {
 
     @Before
     public void before() {
-        basket = new Basket();
+        customer = new Customer("Joseph Cook", true);
+        basket = new Basket(customer);
         item = new Item("Crema e gusto espresso", "Lavazza", 123456, 4.00);
         item1 = new Item("semi-skimmed milk", "Grahams", 234567, 1.00);
         item2 = new Item("demerara sugar", "Tate and Lyle", 345678, 2.00);
         item3 = new Item("Choco Leibniz biscuits", "Bahlsen", 456789, 2.00);
         item4 = new Item("dark chocolate gingers", "Border biscuits", 567890, 1.00);
         item5 = new Item("dishwasher tablets", "Finish", 678901, 10.00);
-        customer = new Customer("Joseph Cook", true);
     }
 
     @Test
